@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H1>Seleção de Funcionarios</H1>
+    <div id="cadastro"></div>
+    <div id="totais"></div>
+    <script>
+        let dados = "";
+        let idade = "";
+        let soma = 0;
+        let resultado = 0;
+        let resultado1 = -1;
+        let resultado2 = 0;
+        let resultado3 = 0;
+        let resultado4 = 0;
+        let pessoas = "";
+        let contador = 0;
+        let somaidade = 0;
+        let numeroidade = 0;
+        let sexoF = 0;
+        let sexoM = 0;
+        let maioresdeidade;
+        let numerodemaiores;
+        let somatotal = "";
+        let totalF;
+        let totalM;
+        let totalnumerodemaiores = "";
+        let total = 0;
+        let separador;
+        let sexo = "";
+        let experiencia = "";
+        while (contador < 3) {
+            let numcandidato = Number(prompt("Digite o numero do candidato ou 0 para sair"));
+            if (numcandidato != 0) {
+                dados += "Número do candidato: " + numcandidato + "</br>";
+                contador++;
+                total += (contador / contador);
+                idade = Number(prompt("Digite a idade do candidato"));
+                dados += "Idade do candidato: " + idade + "</br>";
+                somaidade += idade;
+                numeroidade++
+                if (idade >= 18) {
+                    maioresdeidade += idade;
+                    numerodemaiores++;
+                    totalnumerodemaiores++;
+                }
+                sexo = prompt("Indique o sexo do candidato \n 1 - Feminino \n 2 - Masculino");
+
+
+                if (sexo === "1") {
+                    resultado++;
+                    sexoF++;
+                    dados += "Sexo: Feminino</br>";
+
+                } if (sexo === "2") {
+                    resultado2++;
+                    sexoM++;
+                    dados += "Sexo: Masculino</br>";
+                }
+
+
+                experiencia = prompt("Possui experiencia na area ? \n 1 - Sim \n 2 - Não");
+
+                if (experiencia === "1") {
+                    resultado3++;
+                    dados += "Possui Experiencia: Sim </br>";
+                }
+                else if (experiencia === "2") {
+                    resultado4++;
+                    dados += "Possui experiencia: Não </br>";
+                }
+                separador = "------------";
+            } else {
+                contador = 10;
+                separador = "------------";
+            }
+     
+            if (sexo === "1" && experiencia === "1" && idade >= "18") {
+            resultado1++;
+
+        }
+        if (sexo === "2" && experiencia === "2" && idade >= "18") {
+            resultado1++;
+
+        }
+        }
+     
+        soma += Number((somaidade / numeroidade));
+        document.getElementById("cadastro").innerHTML = dados + "Total de pessoas: " + total + "</br>" + "Numero de mulheres: " + sexoF + "</br>";
+        document.getElementById("totais").innerHTML = "Numero de homens: " + sexoM + "</br>" + "Idade Media: " + soma + "</br>Maiores de idade: " + totalnumerodemaiores + "</br>Quantidade de mulheres maiores de 18 anos, que possuem experiencia: " + resultado1 + "</br>Quantidade de homens maiores de 18 anos,que possuem experiencia: " + resultado1;    
+    </script>
+</body>
+
+</html>

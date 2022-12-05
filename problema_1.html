@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de peças</title>
+</head>
+<body>
+    <h1>Seleção de Peças</h1>
+    <div id="resposta"></div>
+    <script>
+        let codigo = "";
+        let resultado = "";
+        let msg = "";
+        let msg2 = "";
+        let resul = "";
+        let aprovada = "";
+        let reprovada = "";
+        let total = 0;
+        let contador = 0;
+     while (contador < 6) {
+        let codigo1 = prompt("Digite o codigo do produto");
+        contador++;
+        alert ("Produto aprovado digite 1/reprovado digite 0");
+        let codigo2 = prompt("Classifique a qualidade do produto");
+         if (codigo2 == "1") {
+            msg += "Peça aprovada" + " " + codigo1 + "</br>";
+            aprovada++;
+            total++;
+          document.getElementById("resposta").innerHTML = msg; 
+          } else if (codigo2 ==="0"){
+            msg2 += "Peça reprovada"+ " " + codigo1 + "</br>";
+           reprovada++;
+            total++;
+          document.getElementById("resposta").innerHTML += msg2 ;
+        }}
+        
+        document.getElementById("resposta").innerHTML += "Total de Peças" + total;
+       
+          
+          
+            
+         
+          
+         
+       
+     
+        
+      
+                
+       
+    
+    
+
+            
+        
+        
+       
+        
+    </script>
+</body>
+</html>
